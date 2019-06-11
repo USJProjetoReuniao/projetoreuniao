@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group name="WEB">
+            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/ProjetoReuniao/web/app/src/js/searchpage.js</file>
+            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/ProjetoReuniao/web/app/src/css/dashboard.css</file>
+            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/ProjetoReuniao/web/index.html</file>
+            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/ProjetoReuniao/web/app/view/painel.jsp</file>
+            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/ProjetoReuniao/web/app/view/visualizar.jsp</file>
+        </group>
+        <group>
+            <file>file:/home/luandre/NetBeansProjects/ProjetoReuniao/src/java/br/com/app/dao/ReuniaoDAO.java</file>
+            <file>file:/home/luandre/NetBeansProjects/ProjetoReuniao/src/java/br/com/app/dao/ConnectionDB.java</file>
+            <file>file:/home/luandre/NetBeansProjects/ProjetoReuniao/src/java/br/com/app/dao/UsuarioDAO.java</file>
+            <file>file:/home/luandre/NetBeansProjects/ProjetoReuniao/src/java/br/com/app/model/Reuniao.java</file>
+            <file>file:/home/luandre/NetBeansProjects/ProjetoReuniao/src/java/br/com/app/model/Usuario.java</file>
+            <file>file:/home/luandre/NetBeansProjects/ProjetoReuniao/src/java/br/com/app/dao/PautaDAO.java</file>
+        </group>
+    </open-files>
+</project-private>
