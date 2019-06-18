@@ -18,7 +18,7 @@ and open the template in the editor.
          <script src="./app/src/js/loadpage.js"></script>
          <script src="./app/src/js/bootstrap.js"></script>
          <script src="./app/src/js/searchpage.js"></script>
-         
+    
          <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -38,14 +38,30 @@ and open the template in the editor.
      <link rel="stylesheet" href="./app/src/css/dashboard.css"/>
     </head>
     <body>
-      
-        <nav class="navbar fixed-top flex-md-nowrap p-0 navbar-bg-333">
-            
-            <a class="navbar-brand border-bottom-0 text-left text-white" href="?page=painel" style="width: 200px;">USJ Marker</a>
-            
-             <ul class="navbar-nav mr-2 ">
+        <%
+        String usuario = (String) session.getAttribute("usuario");
+              if(usuario == null){
+                  response.sendRedirect("./login.jsp");                  
+              }else{
+                 out.print("teste");
+              }
+        
+        %>
+
+        
+        <nav class="navbar fixed-top flex-md-nowrap p-0  navbar-bg-333">
+            <nav class="navbar-brand border-bottom-0 nav-link" style="width: 200px; ">         
+                   <a class="text-white" style="text-decoration:none;" href="?page=painel" > 
+                   <img class="mb-2" height="40px" src="./app/src/img/usj1.png"/>          
+                    USJ Marker 
+                   </a>             
+           </nav>
+            <span class="text-light text-left">
+                <a> Usuário: <%=usuario%> </a>
+                 </span>
+             <ul class="navbar-nav mr-2">
              <li class="nav-item pb-1 pt-1 pr-3 pl-3 ">
-             <a class="nav-link text-light" href="#">Sair</a>
+             <a class="nav-link text-light" href="./app/controller/deslogarreuniao.jsp">Sair</a>
              </li>
             </ul>
         </nav>
@@ -99,3 +115,11 @@ and open the template in the editor.
      
           </body>
 </html>
+
+<script>
+   $().ready(function() {
+	setTimeout(function () {
+		$('#infoErro').fadeIn( 600 ).delay( 1500 ).fadeOut( 2000 ); // "foo" é o id do elemento que seja manipular.
+	}, 2500); // O valor é representado em milisegundos.
+});
+</script>

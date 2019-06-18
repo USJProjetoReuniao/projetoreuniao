@@ -86,13 +86,12 @@ body {
  * Navbar
  */
 
-.navbar-brand {
-  max-height: 50px;
-  padding: 13px;
+.navbar-brand{
+  max-height: 50px; 
   font-size: 16px;
   background-color: #373737;
   box-shadow: 1px 0 5px rgba(33, 33, 33, .1);
-  
+
 }
 
 .navbar-bg-333{

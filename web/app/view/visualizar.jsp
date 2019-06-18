@@ -6,7 +6,8 @@
 <%@page import="br.com.app.model.Reuniao" %>
 <%@page import="br.com.app.dao.ReuniaoDAO" %>
       
-          <% Date d  = new Date(); String today=DateFormat.getDateInstance().format(d);
+<%               
+             Date d  = new Date(); String today=DateFormat.getDateInstance().format(d);
             
              ReuniaoDAO red = new ReuniaoDAO();
              PautaDAO  pad = new PautaDAO();
@@ -18,21 +19,16 @@
              for (int num = 0; num < listaReuniao.size(); num++){ %>
         
          
-       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap  align-items-center pt-3 pb-2 mb-3 border-bottom">
+       <div class="d-flex justify-content-between  flex-wrap flex-md-nowrap  align-items-center pt-3 pb-2 mb-3 border-bottom">
            <h3 class="h3"> Reunião - <% out.print(listaReuniao.get(num).getTitulo()); %></h3>                                     
                                                                          
           
      <div class="btn-toolbar mb-3">
           <form method="POST">
-         <div class="btn-group mr-3" role="group" aria-label="First group">
-            
-                 
+         <div class="btn-group mr-3" role="group" aria-label="First group">         
              <% out.print("<button  formaction='./app/controller/iniciarreuniao.jsp?id="+listaReuniao.get(num).getId()+"' class='btn  btn-success btn-secondary '>Iniciar Reuniao</button>"); %>
              <% out.print("<button  formaction='./app/controller/cancelreuniao.jsp?id="+listaReuniao.get(num).getId()+"' class='btn  btn-info btn-secondary '>Cancelar</button>"); %>   
-             <% out.print("<button  formaction='./app/controller/deletereuniao.jsp?id="+listaReuniao.get(num).getId()+"' class='btn  btn-danger btn-secondary '>Excluir</button>"); %>
-             
-           
-                  
+             <% out.print("<button  formaction='./app/controller/deletereuniao.jsp?id="+listaReuniao.get(num).getId()+"' class='btn  btn-danger btn-secondary '>Excluir</button>"); %>           
          </div>  
                </form>
             <label  class="h5 m-auto">Data: <%=today%> </label>                        

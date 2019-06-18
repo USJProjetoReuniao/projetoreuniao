@@ -1,4 +1,5 @@
 
+<%@page import="br.com.app.controller.ReuniaoErro"%>
 <%@page import="javax.management.RuntimeErrorException"%>
 <%@page import="javafx.scene.input.DataFormat"%>
 <%@page import="java.text.*,java.util.*"%>
@@ -6,12 +7,21 @@
 <%@page import="br.com.app.dao.ReuniaoDAO" %>
 
 
-<%Date d  = new Date(); String today=DateFormat.getDateInstance().format(d);%>
+<% 
+    Date d  = new Date(); String today=DateFormat.getDateInstance().format(d);%>
 
      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-     <h1 class="h2">Painel de Reuniões</h1>
+     <h1 class="h2">Painel de Reuniões</h1>  
+     
+       <% ReuniaoErro rec = new ReuniaoErro();   
+       if(rec.getCtrl().equals(false)){
+          out.print("<span id='infoErro' class='box border p-2 text-danger shadow-0'>"+rec.getInfo()+"</span>");  
+          rec.setCtrl(true); 
+       }
+     
+     %>
           
-      <div class="btn-toolbar mb-3 ">
+      <div class="btn-toolbar">
       
              <div class="input-group-prepend ">
                   <input type="text" class="form-control ds-input" id="filtro" placeholder="Procurar..." aria-label="Search for..."> 
@@ -23,9 +33,10 @@
              <div class="input-group-prepend">
               <div  class="h5 m-auto">Data: <%=today%> </div>      
              </div>
-         </div>               
+         </div>     
+             
       </div>
-         
+        
    <div class="modal fade bd-example-modal-lg" id="myModal">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -41,34 +52,34 @@
            <form action="./app/controller/insertreuniao.jsp" method="post">
                 <div class="form-group">
                    <label for="inputTitle"> Titulo </label>
-                   <input type="text" class="form-control" name="InputTitle" maxlength="10" placeholder="Entre com o titulo da reunião."></input>
+                   <input type="text" class="form-control" name="InputTitle" maxlength="10" placeholder="Entre com o titulo da reunião." required></input>
                 </div>   
                 <div class="form-group">
                    <label for="inputTitle">  Data </label>
-                   <input type="date" class="form-control" name="InputData"  placeholder=""></input>
+                   <input type="date" class="form-control" name="InputData"  placeholder="" required ></input>
                 </div>
                 
                 <div class="form-group">
                    <label for="inputTitle"> Duração da Reunião </label>
-                   <input type="time" class="form-control" name="InputHour"  placeholder="Entre com a duração programada."></input>
+                   <input type="time" class="form-control" name="InputHour"  placeholder="Entre com a duração programada." required></input>
                 </div>
                 
                 <div class="form-group">
                    <label for="inputTitle">  Categoria </label>
-                   <input type="text" class="form-control" name="InputCategory"  placeholder="Entre com a categoria que deseja."></input>
+                   <input type="text" class="form-control" name="InputCategory"  placeholder="Entre com a categoria que deseja." required></input>
                 </div>
                 
                  <div class="form-group">
                    <label for="inputTitle"> Localização </label>
-                   <input type="text" class="form-control" name="InputLocal" maxlength="23"   placeholder="Entre com a localização."></input>
+                   <input type="text" class="form-control" name="InputLocal" maxlength="23"   placeholder="Entre com a localização." required></input>
                 </div>
                
                 <!-- Modal footer -->
                 <div class="modal-footer ">
-                    <input type="submit"  class="btn  btn-success"></input>
+                    <input id="btnCadastro" type="submit"  class="btn btn-success"></input>
               
                      </form>
-                  <button type="button" class="btn  btn-danger" data-dismiss="modal">Fechar</button>
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
                 </div>
               </div>
             </div>
@@ -78,10 +89,7 @@
        
    
           <!-- puxando os Cards do banco de dados -->
-          <div class="container-fluid">
-          <h5 class='mt-3'>Reuniões Ativas:</h5>
-          <div class='border-bottom'></div>
-          <div class="row">
+        
           
             <%  try{   
                 
@@ -89,7 +97,13 @@
                       
                  ArrayList<Reuniao> lista = red.listarTodos();
                        
-                  if(!lista.isEmpty()){  
+                  if(!lista.isEmpty()){  %>
+                 <div class="container-fluid">
+                  <h5 class='mt-3'>Reuniões Ativas:</h5>
+                  <div class='border-bottom'></div>
+                  <div class="row">  
+
+          <%
                                  
                       for(int num=0; num < lista.size(); num++){
                       
@@ -136,9 +150,8 @@
                           }
                       }
                    %> </div> 
-                   <div class='border-bottom'>
                    <h5 class='mt-3'>Reuniões Canceladas:</h5>
-                   </div>
+                   <div class='border-bottom'></div>
                    <div class='row'>
              
                  <%   
@@ -183,9 +196,7 @@
                                         + "</div>");
                                 out.print("</div>");
                                 out.print("</div>");
-                              
-                          
-                                            }                    
+                                              }                    
                                        }
                                }else{   
 
@@ -214,7 +225,4 @@
 
                                    %>       
                       </div>
-                      
-                      
-                      
-
+   

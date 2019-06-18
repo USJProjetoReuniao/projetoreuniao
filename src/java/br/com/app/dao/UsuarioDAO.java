@@ -10,7 +10,6 @@ import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 /**
  *
  * @author luandre
@@ -20,7 +19,6 @@ public class UsuarioDAO {
     private Connection conn;
     private PreparedStatement stmt;
     private Statement st;
-    private ArrayList<Usuario> lista = new ArrayList<>();
     private ResultSet rs;
    
     
@@ -31,7 +29,7 @@ public class UsuarioDAO {
     
     
      public void Inserir(Usuario usuario){
-       // String sql ="INSERT INTO _reuniao (titulo,duracao,categoria,localizacao,ata,data,comentario_cod) VALUES (?,?,?,?,?,?,?)";
+     
             String sql ="INSERT INTO _reuniao (nome,senha,nivel) VALUES (?,?,?)";
         try{
             stmt=conn.prepareStatement(sql);
@@ -47,27 +45,25 @@ public class UsuarioDAO {
        
     }
     
-     public ArrayList <Usuario> Consultar(String nome, String senha){
-           String sql = "SELECT * FROM _reuniao WHERE nome="+nome+" AND "+senha;
-               try{
-                    st = conn.createStatement();
-                    rs = st.executeQuery(sql);
-
-                    while(rs.next()){
-                        
-                         Usuario usuario = new Usuario();
-                            usuario.setId(rs.getInt("id"));
-                            usuario.setNome(rs.getString("nome"));
-                            usuario.setSenha(rs.getString("senha"));
-                            lista.add(usuario);
-                            
-                         }
-                    } catch(SQLException error){
-                       throw new RuntimeException("Erro 5: " +error);
-                }       
-        return lista;
-            
-           
+     public boolean Consultar(String nome, String senha) {
+         boolean check = false; 
+           String sql ="SELECT * FROM _usuario WHERE nome = ? AND senha = ?";
+         
+         try{
+                    stmt = conn.prepareStatement(sql);
+                    stmt.setString(1, nome);
+                    stmt.setString(2, senha);    
+                    rs = stmt.executeQuery();
+                      
+                   if(rs.next()){
+                  check = true;
+                   } 
+               }catch(SQLException error){
+               throw new RuntimeException("Erro Função Login:" +error);           
+              } finally{
+             
+         }                
+          return check;
       }
   
     
