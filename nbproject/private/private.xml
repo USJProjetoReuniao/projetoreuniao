@@ -8,11 +8,13 @@
             <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/ProjetoReuniao/web/login.jsp</file>
         </group>
         <group>
-            <file>file:/home/luandre/NetBeansProjects/ProjetoReuniao/src/java/br/com/app/dao/UsuarioDAO.java</file>
-            <file>file:/home/luandre/NetBeansProjects/ProjetoReuniao/web/login.jsp</file>
-            <file>file:/home/luandre/NetBeansProjects/ProjetoReuniao/web/index.jsp</file>
-            <file>file:/home/luandre/NetBeansProjects/ProjetoReuniao/src/java/br/com/app/controller/ReuniaoErro.java</file>
-            <file>file:/home/luandre/NetBeansProjects/ProjetoReuniao/src/java/br/com/app/controller/UsuarioErro.java</file>
+            <file>file:/home/luandre/NetBeansProjects/ProjetoReuniao/src/java/br/com/app/dao/ReuniaoDAO.java</file>
+            <file>file:/home/luandre/NetBeansProjects/ProjetoReuniao/src/java/br/com/app/dao/ConnectionDB.java</file>
+            <file>file:/home/luandre/NetBeansProjects/ProjetoReuniao/src/java/br/com/app/model/Reuniao.java</file>
+            <file>file:/home/luandre/NetBeansProjects/ProjetoReuniao/web/app/src/css/myStyle0001.css</file>
+            <file>file:/home/luandre/NetBeansProjects/ProjetoReuniao/web/app/controller/deletereuniao.jsp</file>
+            <file>file:/home/luandre/NetBeansProjects/ProjetoReuniao/web/app/view/painel.jsp</file>
+            <file>file:/home/luandre/NetBeansProjects/ProjetoReuniao/web/app/controller/insertreuniao.jsp</file>
         </group>
     </open-files>
 </project-private>

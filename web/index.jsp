@@ -76,14 +76,14 @@ and open the template in the editor.
                         Painel de Reuniões
                       </a>
                     </li>
-                    <li class="nav-item btn-menu ">
+                    <li class="nav-item btn-menu">
                       <a class="nav-link"  href="" role="button" data-toggle="modal" data-target="#myModal">
                         <span class="far fa-sticky-note fa-fw"> </span>
                         Cadastro
                       </a>
                     </li>
-                    <li class="nav-item btn-menu ">
-                      <a class="nav-link" href="#">
+                    <li class="nav-item btn-menu">
+                      <a class="nav-link" href="?page=relatorios">
                            <span class="fas fa-file-export fa-fw"></span>
                         Relatórios
                       </a>

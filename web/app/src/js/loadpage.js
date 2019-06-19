@@ -71,6 +71,11 @@ function loadPage(){
     var url = './app/view/visualizar.jsp';  
     document.getElementById("loadPageDocument").innerHTML = "<data data-include='"+url+"?id="+a+"'></data>";
      }
+   
+    if(id == 'relatorios'){
+    var url = './app/view/relatorios.jsp';  
+     document.getElementById("loadPageDocument").innerHTML = "<data data-include='"+url+"'></data>";
+     }
     
 }
 

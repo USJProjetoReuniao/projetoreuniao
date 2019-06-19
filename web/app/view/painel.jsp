@@ -31,7 +31,7 @@
        <button type="button"  class="btn btn-info btn-secondary ">OK</button>
            </div>
              <div class="input-group-prepend">
-              <div  class="h5 m-auto">Data: <%=today%> </div>      
+              <div class="h5 m-auto">Data: <%=today%> </div>      
              </div>
          </div>     
              
