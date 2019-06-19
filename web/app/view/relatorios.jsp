@@ -27,13 +27,22 @@
              
              <div class="container-fluid">
                  
-                 <table class="table table-grey table-sm">
-                     <thead>
-                     <th> teste </th>   <th> teste </th>           
-                     </thead>
-                     <tbody>
-                         
-                     </tbody>
+                 <table class="table text-center col-auto table-responsive-md">
+                    
+                         <thead class="table table-grey table-hover ">
+                             <tr>
+                                 <th>1</th><th>2</th><th>3</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr><td>testeste</td><td>testte</td><td>tesrte</td></tr>
+                                  <tr><td>testeste</td><td>testte</td><td>tesrte</td></tr>  
+                          
+                         </tbody>
+                     </table>
+
+                    
+                 
                      
                      
                  </table>
