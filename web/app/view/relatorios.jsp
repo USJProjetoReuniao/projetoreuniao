@@ -1,5 +1,3 @@
-
-      
 <%@page import="br.com.app.model.Pauta"%>
 <%@page import="br.com.app.model.Reuniao"%>
 <%@page import="br.com.app.dao.PautaDAO"%>
@@ -36,7 +34,7 @@
                          </thead>
                          <tbody>
                              <tr><td>testeste</td><td>testte</td><td>tesrte</td></tr>
-                                  <tr><td>testeste</td><td>testte</td><td>tesrte</td></tr>  
+                             <tr><td>testeste</td><td>testte</td><td>tesrte</td></tr>  
                           
                          </tbody>
                      </table>

@@ -36,7 +36,7 @@
         </div>
          
          <div class="container-fluid">
-             <div class="col-md-5 float-right">           
+             <div class="col-sm-4 float-right">           
                  <h1 class="h4 mt-2 pb-2 mb-4 border-bottom"><i class="fas fa-lg fa-tasks fa-fw mr-1"> </i> Detalhes </h1> 
               
              <form>
@@ -75,7 +75,7 @@
              </form> 
              </div> 
                      
-                   <div class="col-md-7 mr-lg-auto float-left">      
+                   <div class="col-sm-7 mr-sm-auto float-left">      
                        <h1 class="h4 mt-2 pb-2 mb-4 border-bottom"><i class='far fa-lg fa-clipboard mr-1'></i> Pautas </h1>   
                        
                        <div class="col-md-auto overflow-auto" style="max-height: 500px; "> 
