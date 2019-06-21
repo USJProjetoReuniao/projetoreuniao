@@ -7,8 +7,7 @@
 <%@page import="br.com.app.dao.ReuniaoDAO" %>
 
 
-<% 
-    Date d  = new Date(); String today=DateFormat.getDateInstance().format(d);%>
+<% Date d  = new Date(); String today=DateFormat.getDateInstance().format(d);%>
 
      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
      <h1 class="h2">Painel de Reuniões</h1>  
@@ -17,10 +16,8 @@
        if(rec.getCtrl().equals(false)){
           out.print("<span id='infoErro' class='box border p-2 text-danger shadow-0'>"+rec.getInfo()+"</span>");  
           rec.setCtrl(true); 
-       }
-     
-     %>
-          
+       }%>     
+       
       <div class="btn-toolbar">
       
              <div class="input-group-prepend ">
@@ -42,17 +39,17 @@
       <div class="modal-content">
       
         <!-- Modal Header -->
-        <div class="modal-header modal-title ">
-           <h4 class="modal-title">Cadastro da Reunião</h4>
+        <div class="modal-header">
+           <h4 class="modal-title"><span class="far fa-sticky-note mr-2 fa-1x"></span>Cadastro de Reunião</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
        
         <!-- Modal body -->
        <div class="modal-body">
-           <form action="./app/controller/insertreuniao.jsp" method="post">
+           <form method="post">
                 <div class="form-group">
                    <label for="inputTitle"> Titulo </label>
-                   <input type="text" class="form-control" name="InputTitle" maxlength="10" placeholder="Entre com o titulo da reunião." required></input>
+                   <input type="text" class="form-control" name="InputTitle" maxlength="12" placeholder="Entre com o titulo da reunião." required></input>
                 </div>   
                 <div class="form-group">
                    <label for="inputTitle">  Data </label>
@@ -60,8 +57,12 @@
                 </div>
                 
                 <div class="form-group">
-                   <label for="inputTitle"> Duração da Reunião </label>
-                   <input type="time" class="form-control" name="InputHour"  placeholder="Entre com a duração programada." required></input>
+                     
+                     <label for="inputTitle"> Inicio da Reunião </label>
+                     <div class="form-inline ">
+                     <input type="time" class="form-control mr-2" name="InputHour"  placeholder="Entre com a duração programada." required></input>
+                     <input type="time" class="form-control" name="InputHour"  placeholder="Entre com a duração programada." required></input>
+                     </div>
                 </div>
                 
                 <div class="form-group">
@@ -74,14 +75,16 @@
                    <input type="text" class="form-control" name="InputLocal" maxlength="23"   placeholder="Entre com a localização." required></input>
                 </div>
                
+               
                 <!-- Modal footer -->
                 <div class="modal-footer ">
-                    <input id="btnCadastro" type="submit"  class="btn btn-success"></input>
+                    <button formaction="./app/controller/insertreuniao.jsp" id="btnCadastro "class="btn btn-success">OK</input>
               
                      </form>
                   <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
                 </div>
-              </div>
+                </div>
+              
             </div>
             </div>
            </div>

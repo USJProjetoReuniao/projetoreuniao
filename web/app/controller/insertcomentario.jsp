@@ -1,5 +1,4 @@
-<%@page import="java.util.Calendar"%>
-<%@page import="java.util.Date"%>
+
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="br.com.app.dao.PautaDAO"%>
 <%@page import="br.com.app.model.Pauta"%>
@@ -18,17 +17,13 @@
          
            
         try {
-              SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
-              Date hora = Calendar.getInstance().getTime();
-              String dataFormatada = sdf.format(hora);
               
                 Pauta pat = new Pauta();
                 PautaDAO pad = new PautaDAO(); 
-                pat.setPauta(request.getParameter("InputPauta"));   
-                pat.setHorario(dataFormatada);
-                pat.setComentario("");
-                pat.setIdReuniao(Integer.parseInt(request.getParameter("id")));             
-                pad.inserir(pat);
+                pat.setComentario(request.getParameter("InputComentario")); 
+                pat.setIdReuniao(Integer.parseInt(request.getParameter("id_r"))); 
+                pat.setId(Integer.parseInt(request.getParameter("id")));  
+                pad.alterarPauta(pat);
                 
                 response.sendRedirect("../../?page=visualizar&id="+pat.getIdReuniao());
                               

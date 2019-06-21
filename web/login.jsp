@@ -48,9 +48,9 @@
      
       </div> <!-- end login -->
             <div class="logo ml-4">
-                <img class='' src='./app/src/img/usj1.png' width='120' height='120'/>
-                <h5 class="h6 font-weight-normal ">Centro Universitário Municipal de São José</h5>
-                <h3 class='h3 font-weight-normal '>USJ Marker</h3>            
+                <img class="" src="./app/src/img/usj1.png" width="120" height="120"/>
+                <h5 class="h6 font-weight-normal">Centro Universitário Municipal de São José</h5>
+                <h3 class="h3 font-weight-normal">USJ Marker</h3>            
                 <div class="clearfix"></div>
             </div>     
      </center>

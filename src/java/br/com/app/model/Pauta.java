@@ -14,6 +14,15 @@ public class Pauta {
      private int idreuniao;
      private String pauta;
      private String horario;
+     private String comentario;
+
+    public String getComentario() {
+        return comentario;
+    }
+
+    public void setComentario(String comentario) {
+        this.comentario = comentario;
+    }
 
     public int getIdreuniao() {
         return idreuniao;
