@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html>
     <head>
         <title>USJ Marker</title>
@@ -15,22 +11,19 @@ and open the template in the editor.
          <link rel="stylesheet" href="./app/src/css/all.css" type="text/css"/>
          <script src="./app/src/js/all.js"></script>       
          <script src="./app/src/js/loadpage.js"></script>
-        <script src="./app/src/js/jquery-3.4.1.min.js"></script>
-        <script src="./app/src/js/bootstrap.js"></script>      
-         <script src="./app/src/js/searchpage.js"></script>
-    
-         
-   
-         
+         <script src="./app/src/js/jquery-3.4.1.min.js"></script>
+         <script src="./app/src/js/bootstrap.js"></script>      
+         <script src="./app/src/js/searchpage.js"></script>    
+        
          <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
+                .bd-placeholder-img {
+                  font-size: 1.125rem;
+                  text-anchor: middle;
+                  -webkit-user-select: none;
+                  -moz-user-select: none;
+                  -ms-user-select: none;
+                  user-select: none;
+                }
 
       @media (min-width: 768px) {
         .bd-placeholder-img-lg {
