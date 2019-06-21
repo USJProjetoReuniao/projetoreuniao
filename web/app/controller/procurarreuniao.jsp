@@ -9,13 +9,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
        </head>
     <body>
-        <%         
-          
+        <%   
                 Reuniao reu = new Reuniao();           
                 ReuniaoDAO red = new ReuniaoDAO();
                 reu.setProcurar(request.getParameter("InputSearch"));
-                response.sendRedirect("../../?page=painel&search="+reu.getProcurar());
-         
+                response.sendRedirect("../../?page=painel&search="+reu.getProcurar());         
         %>
         
     </body>

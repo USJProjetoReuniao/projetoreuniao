@@ -99,7 +99,7 @@
                                          + "<input type='submit' value='OK' formaction='./app/controller/insertcomentario.jsp?id="+listaPauta.get(count).getId()+"&id_r="+listaReuniao.get(num).getId()+"' id='btnEnviar"+(count)+"'  class='btn btn-sm btn-success btn-primary' disabled> </input>"
                                          + "</form>"
                                          + "</div>"      
-                                         + "</div>");                                                   
+                                         + "</div>");                                                
                                     
                                                                                             
                                           out.print("</div>");                                
