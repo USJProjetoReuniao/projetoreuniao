@@ -7,33 +7,43 @@
 <%@page import="br.com.app.dao.ReuniaoDAO" %>
 
 
-<% Date d  = new Date(); String today=DateFormat.getDateInstance().format(d);%>
+<% 
+   Date d  = new Date(); String today=DateFormat.getDateInstance().format(d);
+      
+%>
 
      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
      <h1 class="h2">Painel de Reuniões</h1>  
      
-       <% ReuniaoErro rec = new ReuniaoErro();   
-       if(rec.getCtrl().equals(false)){
-          out.print("<span id='infoErro' class='box border p-2 text-danger shadow-0'>"+rec.getInfo()+"</span>");  
-          rec.setCtrl(true); 
-       }%>     
+       <% 
+           ReuniaoErro rec = new ReuniaoErro();   
+           Reuniao reu = new Reuniao();
+           
+           
+            if(rec.getCtrl().equals(false)){
+               out.print("<span id='infoErro' class='box border p-2 text-danger shadow-0'>"+rec.getInfo()+"</span>");  
+               rec.setCtrl(true);                    
+            }       
+
+       %>     
        
-      <div class="btn-toolbar">
-      
-             <div class="input-group-prepend ">
-                  <input type="text" class="form-control ds-input" id="filtro" placeholder="Procurar..." aria-label="Search for..."> 
-                  
-             </div>
-           <div class="btn-group mr-2" role="group" aria-label="First group">
-       <button type="button"  class="btn btn-info btn-secondary ">OK</button>
-           </div>
-             <div class="input-group-prepend">
-              <div class="h5 m-auto">Data: <%=today%> </div>      
+      <div class="input-group-append">
+          <form method="post">              
+             <div class="rounded border mr-2"> 
+                 
+                 <input type="text" name="InputSearch" class="p-2 border-0" id="filtro" placeholder="Procurar..." required>                  
+        
+                <% out.print("<button formaction='./app/controller/procurarreuniao.jsp' class='btn btn-md float-right btn-secondary'> OK </button>");%>
+                
+            </div>            
+          </form>  
+             <div class="input-group-text ">
+                 <h5 class="h5 m-auto">Data: <%=today%> </h5>      
              </div>
          </div>     
-             
+            
       </div>
-        
+      
    <div class="modal fade bd-example-modal-lg" id="myModal">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -107,17 +117,20 @@
                   <div class="row">  
 
           <%
-                                 
+                    
+                 
                       for(int num=0; num < lista.size(); num++){
-                      
-                          if(lista.get(num).getCancelada().equals(false)){
-                               
+               
+                      //Se as reunioes estiverem ativas...
+                          if(lista.get(num).getCancelada().equals(false)){                                        
+                            if(lista.get(num).getTitulo().startsWith(reu.getProcurar()) || lista.get(num).getLocalizacao().startsWith(reu.getProcurar())){                     
+                    
                                 out.print("<div id='card' class='col-xs-2 col-sm-0 '>");
                                 out.print("<div class='card box-shadow m-3 box' style='width: 19rem;'>");
                                 out.print("<div class='card-header'>");
                                 out.print("<a class='h6 font-weight-bold'><span class='fas fa-lg fa-tasks fa-fw mr-2' ></span> Reunião - "+lista.get(num).getTitulo()
                                            
-                                            + "<a role='button' onclick='"+"loadpage('22')"+"' href='?page=visualizar&id="+lista.get(num).getId()+"'' class='float-right'>"
+                                            + "<a role='button' href='?page=visualizar&id="+lista.get(num).getId()+"'' class='float-right'>"
                                             + "<i class='fas fa-lg fa-search-plus fa-fw'></i>"                                               
                                             + "</a>"
                                             + "<a href='./app/controller/cancelreuniao.jsp?id="+lista.get(num).getId()+"' class='text-right float-right mr-2'>"
@@ -149,9 +162,11 @@
                                
                                 out.print("</div>");
                                 out.print("</div>");
-                                                        
+                                     }                      
                           }
+                         
                       }
+                       
                    %> </div> 
                    <h5 class='mt-3'>Reuniões Canceladas:</h5>
                    <div class='border-bottom'></div>
@@ -160,7 +175,7 @@
                  <%   
                  for(int num=0; num < lista.size(); num++){
                      if(lista.get(num).getCancelada().equals(true)){  
-                           
+                          if(lista.get(num).getTitulo().startsWith(reu.getProcurar()) || lista.get(num).getLocalizacao().startsWith(reu.getProcurar())){      
            // Caso a reunião estiver cancelada.
                              
                                 out.print("<div id='card_r_"+lista.get(num).getId()+"' class='col-xs-2 col-sm-0'>");
@@ -201,8 +216,10 @@
                                 out.print("</div>");
                                               }                    
                                        }
+                     }
+                 reu.setProcurar("");
                                }else{   
-
+                         
                              %>
 
                                 <table class="mr-auto ml-auto mt-5 text-center">                                 

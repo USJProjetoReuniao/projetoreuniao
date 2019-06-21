@@ -16,8 +16,7 @@
         <%  
          
            
-        try {
-              
+        try {              
                 Pauta pat = new Pauta();
                 PautaDAO pad = new PautaDAO(); 
                 pat.setComentario(request.getParameter("InputComentario")); 

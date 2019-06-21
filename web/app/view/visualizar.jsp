@@ -5,9 +5,6 @@
 <%@page import="java.text.*,java.util.*"%>
 <%@page import="br.com.app.model.Reuniao" %>
 <%@page import="br.com.app.dao.ReuniaoDAO" %>
-   
-
-
 
 <%               
              Date d  = new Date(); String today=DateFormat.getDateInstance().format(d);
@@ -28,12 +25,12 @@
           
      <div class="btn-toolbar mb-3">
           <form method="POST">
-         <div class="btn-group mr-3" role="group" aria-label="First group">         
-             <% out.print("<button formaction='./app/controller/iniciarreuniao.jsp?id="+listaReuniao.get(num).getId()+"' class='btn btn-success btn-secondary '>Iniciar Reuniao</button>"); %>
-             <% out.print("<button formaction='./app/controller/cancelreuniao.jsp?id="+listaReuniao.get(num).getId()+"' class='btn btn-info btn-secondary '>Cancelar</button>"); %>   
-             <% out.print("<button formaction='./app/controller/deletereuniao.jsp?id="+listaReuniao.get(num).getId()+"' class='btn btn-danger btn-secondary '>Excluir</button>"); %>           
-         </div>  
-               </form>
+                <div class="btn-group mr-3" role="group" aria-label="First group">         
+                    <% out.print("<button formaction='./app/controller/iniciarreuniao.jsp?id="+listaReuniao.get(num).getId()+"' class='btn btn-success btn-secondary '>Iniciar Reuniao</button>"); %>
+                    <% out.print("<button formaction='./app/controller/cancelreuniao.jsp?id="+listaReuniao.get(num).getId()+"' class='btn btn-info btn-secondary '>Cancelar</button>"); %>   
+                    <% out.print("<button formaction='./app/controller/deletereuniao.jsp?id="+listaReuniao.get(num).getId()+"' class='btn btn-danger btn-secondary '>Excluir</button>"); %>           
+                </div>  
+          </form>
             <label  class="h5 m-auto">Data: <%=today%> </label>                        
       </div>
         </div>
@@ -109,10 +106,8 @@
                                 }        
                             }else{
                                    out.print("<h3 class='h5 text-center mt-5 mb-5'><i class='far fa-lg fa-edit mr-2'></i>Vamos adicionar alguma pauta? :)</h5>");
-                          }
-                             
-                      %>
-                       
+                          }                             
+                      %>                       
                          </div>
                           <form method="POST">
                           <div class="input-group mb-3 mt-4">                         
@@ -128,4 +123,4 @@
     
          </div>
           
-            <% } %> 
+   <% } %> 

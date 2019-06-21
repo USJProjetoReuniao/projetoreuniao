@@ -66,6 +66,11 @@ function loadPage(){
     var url = './app/view/painel.jsp';
     document.getElementById("loadPageDocument").innerHTML = "<data data-include='"+url+"'></data>";
      }
+     
+      if(id == 'painel'){
+    var url = './app/view/painel.jsp';
+    document.getElementById("loadPageDocument").innerHTML = "<data data-include='"+url+"?search="+a+"'></data>";
+     }
                  
     if(id == 'visualizar'){
     var url = './app/view/visualizar.jsp';  

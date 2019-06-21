@@ -26,14 +26,14 @@
                 //reu.setAta(request.getParameter("InputAta"));
                 reu.setData(request.getParameter("InputData"));
                 reu.setCancelada(false);
-             
+                reu.setProcurar("");
                 red.Inserir(reu);
                 response.sendRedirect("../../?page=painel");
                 } else {
                    rec.setInfo("");
                     rec.setInfo("Cadastro de Reuniao -> Algum campo está vazio!");
-                    rec.setCtrl(false);
-                    response.sendRedirect("../../?page=painel");
+                    rec.setCtrl(false);                    
+                    response.sendRedirect("../../?page=painel#");
                                        
                 }             
              }catch(Exception error){
