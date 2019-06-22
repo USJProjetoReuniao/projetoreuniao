@@ -37,13 +37,11 @@
         <%
         String usuario = (String) session.getAttribute("usuario");
               if(usuario == null){
-                  response.sendRedirect("./login.jsp");                  
+                  response.sendRedirect("./login.jsp");   
               }else{
-               
+                  
               }
-        
         %>
-        
         <nav class="navbar fixed-top flex-sm-nowrap p-0 navbar-bg-333">            
             <nav class="navbar-brand border-bottom-0 nav-link" style="width: 200px; ">         
                    <a class="text-white" style="text-decoration:none;" href="?page=painel" > 
@@ -116,14 +114,14 @@
 <script>
    $().ready(function() {
 	setTimeout(function () {
-		$('#infoErro').fadeIn( 600 ).delay( 1500 ).fadeOut( 2000 ); // "foo" é o id do elemento que seja manipular.
-	}, 2500); // O valor é representado em milisegundos.
+		$('#infoErro').fadeIn(600).delay(1500).fadeOut(2000); 
+	}, 2500);
         });
 
 </script>
                 
       
-  <script>
+<script>
 function myEnableArea(a) {
   document.getElementById("comArea"+a).disabled = false;
   document.getElementById("btnEnviar"+a).disabled = false;

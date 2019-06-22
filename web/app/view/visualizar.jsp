@@ -23,15 +23,17 @@
            <h3 class="h3"> Reunião - <% out.print(listaReuniao.get(num).getTitulo()); %></h3>                                     
                                                                          
           
-     <div class="btn-toolbar mb-3">
+    <div class="input-group-append">
           <form method="POST">
                 <div class="btn-group mr-3" role="group" aria-label="First group">         
-                    <% out.print("<button formaction='./app/controller/iniciarreuniao.jsp?id="+listaReuniao.get(num).getId()+"' class='btn btn-success btn-secondary '>Iniciar Reuniao</button>"); %>
+                    <!-- <% out.print("<button formaction='./app/controller/iniciarreuniao.jsp?id="+listaReuniao.get(num).getId()+"' class='btn btn-success btn-secondary '>Iniciar Reuniao</button>"); %> -->
                     <% out.print("<button formaction='./app/controller/cancelreuniao.jsp?id="+listaReuniao.get(num).getId()+"' class='btn btn-info btn-secondary '>Cancelar</button>"); %>   
                     <% out.print("<button formaction='./app/controller/deletereuniao.jsp?id="+listaReuniao.get(num).getId()+"' class='btn btn-danger btn-secondary '>Excluir</button>"); %>           
                 </div>  
           </form>
-            <label  class="h5 m-auto">Data: <%=today%> </label>                        
+            <div class="input-group-text ">
+                 <h5 class="h5 m-auto">Data: <%=today%> </h5>      
+             </div>                    
       </div>
         </div>
          

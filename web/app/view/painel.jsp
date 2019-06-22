@@ -8,7 +8,7 @@
 
 
 <% 
-   Date d  = new Date(); String today=DateFormat.getDateInstance().format(d);
+   Date d  = new Date(); String today=DateFormat.getDateInstance().format(d);  
       
 %>
 
@@ -17,8 +17,7 @@
      
        <% 
            ReuniaoErro rec = new ReuniaoErro();   
-           Reuniao reu = new Reuniao();
-           
+           Reuniao reu = new Reuniao();           
            
             if(rec.getCtrl().equals(false)){
                out.print("<span id='infoErro' class='box border p-2 text-danger shadow-0'>"+rec.getInfo()+"</span>");  
@@ -68,10 +67,10 @@
                 
                 <div class="form-group">
                      
-                     <label for="inputTitle"> Inicio da Reunião </label>
+                     <label for="inputTitle"> Inicio/Fim da Reunião </label>
                      <div class="form-inline ">
-                     <input type="time" class="form-control mr-2" name="InputHour"  placeholder="Entre com a duração programada." required></input>
-                     <input type="time" class="form-control" name="InputHour"  placeholder="Entre com a duração programada." required></input>
+                     <input type="time" class="form-control mr-2" name="InputHourBegin" required></input>
+                     <input type="time" class="form-control" name="InputHourEnd" required></input>
                      </div>
                 </div>
                 
@@ -98,11 +97,9 @@
             </div>
             </div>
            </div>
-          </div>
-       
+          </div>       
    
-          <!-- puxando os Cards do banco de dados -->
-        
+          <!-- puxando os Cards do Banco de dados -->
           
             <%  try{   
                 
@@ -111,20 +108,18 @@
                  ArrayList<Reuniao> lista = red.listarTodos();
                        
                   if(!lista.isEmpty()){  %>
+                  
                  <div class="container-fluid">
-                  <h5 class='mt-3'>Reuniões Ativas:</h5>
-                  <div class='border-bottom'></div>
+                  <h5 class="mt-3">Reuniões Ativas:</h5>
+                  <div class="border-bottom"></div>
                   <div class="row">  
 
-          <%
-                    
-                 
-                      for(int num=0; num < lista.size(); num++){
-               
-                      //Se as reunioes estiverem ativas...
-                          if(lista.get(num).getCancelada().equals(false)){                                        
-                            if(lista.get(num).getTitulo().startsWith(reu.getProcurar()) || lista.get(num).getLocalizacao().startsWith(reu.getProcurar())){                     
-                    
+          <%  
+              
+               for(int num=0; num < lista.size(); num++){        
+                          if(lista.get(num).getCancelada().equals(false)){     
+                           if(lista.get(num).getTitulo().startsWith(Reuniao.getProcurar())){   
+                                              
                                 out.print("<div id='card' class='col-xs-2 col-sm-0 '>");
                                 out.print("<div class='card box-shadow m-3 box' style='width: 19rem;'>");
                                 out.print("<div class='card-header'>");
@@ -146,7 +141,7 @@
                                         + "<ul class='list-group list-group-flush'>"
                                         + "<li class='list-group-item'><i class='far fa-lg fa-clipboard fa-fw mr-2'></i>"+lista.get(num).getCategoria()+"</li>"
                                         + "<li class='list-group-item'><i class='far fa-lg fa-calendar-alt fa-fw mr-2'></i>"+lista.get(num).getData()+"</li>"
-                                        + "<li class='list-group-item'><i class='far fa-lg fa-hourglass fa-fw mr-2'></i>"+lista.get(num).getDuracao()+"</li>"
+                                         + "<li class='list-group-item'><i class='far fa-lg fa-hourglass fa-fw mr-2'></i>"+"("+lista.get(num).getHoraInicial()+" ~ "+lista.get(num).getHoraFinal()+")</li>"
                                         + "<li class='list-group-item'><i class='fas fa-lg fa-map-marked-alt fa-fw mr-2'></i>"+lista.get(num).getLocalizacao()+"</li>"
                                         + "</ul>"                   
                                         + "</div>");
@@ -161,22 +156,23 @@
                                         + "</div>");
                                
                                 out.print("</div>");
-                                out.print("</div>");
-                                     }                      
-                          }
-                         
-                      }
-                       
-                   %> </div> 
-                   <h5 class='mt-3'>Reuniões Canceladas:</h5>
+                                out.print("</div>");                                    
+                                  }                      
+                          }                      
+                   } 
+
+                   %>
+                   
+                  </div> 
+                   <h5 class='mt-3'>Reuniões Arquivadas:</h5>
                    <div class='border-bottom'></div>
                    <div class='row'>
              
                  <%   
-                 for(int num=0; num < lista.size(); num++){
-                     if(lista.get(num).getCancelada().equals(true)){  
-                          if(lista.get(num).getTitulo().startsWith(reu.getProcurar()) || lista.get(num).getLocalizacao().startsWith(reu.getProcurar())){      
-           // Caso a reunião estiver cancelada.
+                 for(int num=0; num < lista.size(); num++){                    
+                            if(lista.get(num).getCancelada().equals(true)){                       
+          
+                                 // Caso a reunião estiver cancelada.
                              
                                 out.print("<div id='card_r_"+lista.get(num).getId()+"' class='col-xs-2 col-sm-0'>");
                                 out.print("<div class='card box-shadow m-3' style='width: 19rem; opacity:0.3;'>");
@@ -199,7 +195,7 @@
                                         + "<ul class='list-group list-group-flush'>"
                                         + "<li class='list-group-item'><i class='far fa-lg fa-clipboard fa-fw mr-2'></i>"+lista.get(num).getCategoria()+"</li>"
                                         + "<li class='list-group-item'><i class='far fa-lg fa-calendar-alt fa-fw mr-2'></i>"+lista.get(num).getData()+"</li>"
-                                        + "<li class='list-group-item'><i class='far fa-lg fa-hourglass fa-fw mr-2'></i>"+lista.get(num).getDuracao()+"</li>"
+                                        + "<li class='list-group-item'><i class='far fa-lg fa-hourglass fa-fw mr-2'></i>"+"("+lista.get(num).getHoraInicial()+"~"+lista.get(num).getHoraFinal()+")</li>"
                                         + "<li class='list-group-item'><i class='fas fa-lg fa-map-marked-alt fa-fw mr-2'></i>"+lista.get(num).getLocalizacao()+"</li>"
                                         + "</ul>"                   
                                         + "</div>");
@@ -214,10 +210,11 @@
                                         + "</div>");
                                 out.print("</div>");
                                 out.print("</div>");
-                                              }                    
-                                       }
+                                      
+                                       
                      }
-                 reu.setProcurar("");
+                 }
+                Reuniao.setProcurar("");
                                }else{   
                          
                              %>
@@ -238,7 +235,7 @@
 
                                      <%            
                                               }
-
+                                              
                                        }catch (Exception error) {
                                                      throw new RuntimeException("Erro 10: "+error);
                                                  }

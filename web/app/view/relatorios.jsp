@@ -10,18 +10,17 @@
              PautaDAO  pad = new PautaDAO();
  %>
           
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap pt-3 pb-2 mb-3 border-bottom">
+            <div class="d-flex justify-content-between  flex-wrap flex-md-nowrap  align-items-center pt-3 pb-2 mb-3 border-bottom">
            
        <h1 class="h2"> Relatórios </h1>                                     
-     
-     <div class="btn-toolbar float-right">
-                        
-             <div class="input-group-prepend">
-                   <div class="h5 mt-auto">Data: <%=today%> </div>  
-             </div>                        
-            
-      </div>
-   </div>
+
+               <div class="input-group-append">
+                        <div class="input-group-text ">
+                            <h5 class="h5 m-auto">Data: <%=today%> </h5>      
+                        </div>                     
+
+                 </div>
+              </div>
              
              <div class="container-fluid">
                  
