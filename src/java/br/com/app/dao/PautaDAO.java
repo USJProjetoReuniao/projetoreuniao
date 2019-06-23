@@ -86,10 +86,7 @@ public class PautaDAO {
         }
     }
         
-        
-        
-        
-    
+
       public ArrayList<Pauta> listarTodas(int valor){
             String sql = "SELECT * FROM _pauta WHERE id_reuniao="+valor;
                try{

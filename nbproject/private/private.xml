@@ -12,12 +12,15 @@
             <file>file:/home/luandre/NetBeansProjects/ProjetoReuniao/web/app/controller/insertreuniao.jsp</file>
         </group>
         <group name="WEB">
-            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/src/java/br/com/app/model/Pauta.java</file>
+            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/web/app/controller/insertreuniao.jsp</file>
+            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/src/java/br/com/app/dao/ReuniaoDAO.java</file>
             <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/web/app/view/painel.jsp</file>
-            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/web/app/controller/insertcomentario.jsp</file>
-            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/web/app/src/css/myStyle0001.css</file>
+            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/src/java/br/com/app/controller/UsuarioErro.java</file>
+            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/src/java/br/com/app/controller/Horas.java</file>
+            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/src/java/br/com/app/controller/ReuniaoErro.java</file>
             <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/src/java/br/com/app/dao/PautaDAO.java</file>
-            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/web/index.jsp</file>
+            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/src/java/br/com/app/model/Reuniao.java</file>
+            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/web/app/controller/procurarreuniao.jsp</file>
             <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/web/app/view/visualizar.jsp</file>
         </group>
     </open-files>

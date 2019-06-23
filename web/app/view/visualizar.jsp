@@ -26,7 +26,7 @@
     <div class="input-group-append">
           <form method="POST">
                 <div class="btn-group mr-3" role="group" aria-label="First group">         
-                    <!-- <% out.print("<button formaction='./app/controller/iniciarreuniao.jsp?id="+listaReuniao.get(num).getId()+"' class='btn btn-success btn-secondary '>Iniciar Reuniao</button>"); %> -->
+               <!-- <% out.print("<button formaction='./app/controller/iniciarreuniao.jsp?id="+listaReuniao.get(num).getId()+"' class='btn btn-success btn-secondary '>Iniciar Reuniao</button>"); %> -->
                     <% out.print("<button formaction='./app/controller/cancelreuniao.jsp?id="+listaReuniao.get(num).getId()+"' class='btn btn-info btn-secondary '>Cancelar</button>"); %>   
                     <% out.print("<button formaction='./app/controller/deletereuniao.jsp?id="+listaReuniao.get(num).getId()+"' class='btn btn-danger btn-secondary '>Excluir</button>"); %>           
                 </div>  
@@ -43,7 +43,7 @@
               
              <form>
               <fieldset disabled>
-                  <div class="form-group ">
+                  <div class="form-group">
                     <label for="disabledTextInput">Titulo</label>
                     <input type="text" id="" class="form-control" placeholder="" value="<%out.print(listaReuniao.get(num).getTitulo());%>">
                   </div>
@@ -59,11 +59,11 @@
                   <div class="form-row mb-3">
                       <div class="col-md-6 mb-4 m-auto">
                     <label for="disabledTextInput">Inicio da Reunião</label>
-                    <input type="text" id="" class="form-control" placeholder="">                    
+                    <input type="text" id="" class="form-control" placeholder="" value="<%out.print(listaReuniao.get(num).getHoraInicial());%>">                    
                       </div> 
                       <div class="col-md-6 mb-4 m-auto">
                           <label>Fim da Reunião</label>   
-                      <input type="text" id="" class="form-control" placeholder="">    
+                         <input type="text" id="" class="form-control" placeholder="" value="<%out.print(listaReuniao.get(num).getHoraFinal());%>">        
                       </div>
                   </div>
                      

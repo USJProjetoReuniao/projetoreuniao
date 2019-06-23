@@ -30,51 +30,30 @@ public class ReuniaoDAO {
     public ReuniaoDAO(){   
         conn = new ConnectionDB().getConexao();
     }
-    
-    
+
     
     public void Inserir(Reuniao reuniao){
-       // String sql ="INSERT INTO _reuniao (titulo,duracao,categoria,localizacao,ata,data,comentario_cod) VALUES (?,?,?,?,?,?,?)";
-            String sql ="INSERT INTO _reuniao (titulo,duracao,categoria,localizacao,ata,data,cancelada) VALUES (?,?,?,?,?,?,?)";
+      
+            String sql ="INSERT INTO _reuniao (titulo,hora_inicial,hora_final,localizacao,categoria,data,cancelada,duracao) VALUES (?,?,?,?,?,?,?,?)";
         try{
             stmt=conn.prepareStatement(sql);
-            stmt.setString(1, reuniao.getTitulo());
-            stmt.setString(2, reuniao.getDuracao());
-            stmt.setString(3, reuniao.getCategoria());
+            stmt.setString(1, reuniao.getTitulo());          
+            stmt.setString(2, reuniao.getHoraInicial());
+            stmt.setString(3, reuniao.getHoraFinal());
             stmt.setString(4, reuniao.getLocalizacao());
-            stmt.setString(5, reuniao.getAta());
+            stmt.setString(5, reuniao.getCategoria());
             stmt.setString(6, reuniao.getData());
             stmt.setBoolean(7, reuniao.getCancelada());
+            stmt.setString(8, reuniao.getDuracao());
             stmt.execute();
-            stmt.close();
-            
-            
+            stmt.close();    
             
         }catch(SQLException error){
                throw new RuntimeException("Erro 2: " +error);
         }
        
-    }
-         
- 
-      public void alterar(Reuniao reuniao){
-        String sql ="UPDATE _reuniao SET ata = ? WHERE id = ?";
-        try{
-            stmt=conn.prepareStatement(sql);
-        //  stmt.setString(1, reuniao.getTitulo());
-        //  stmt.setDouble(2, reuniao.getDuracao());
-        //  stmt.setString(3, reuniao.getCategoria());
-        //  stmt.setString(4, reuniao.getLocalizacao());
-            stmt.setString(1, reuniao.getAta());
-            stmt.setInt(2, reuniao.getId());
-            
-            stmt.execute();
-            stmt.close();
-        }catch(SQLException error){
-               throw new RuntimeException("Erro 3: " +error);
-        }
-    }
-      
+    }         
+       
 
       public void cancelar(int valor){
         String sql ="UPDATE _reuniao SET cancelada = true WHERE id ="+valor;
@@ -109,7 +88,7 @@ public class ReuniaoDAO {
             st.close();
             
         }catch(SQLException error){
-               throw new RuntimeException("Erro 4: " +error);
+               throw new RuntimeException("Erro Excluir: " +error);
         }
     }
      
@@ -120,17 +99,17 @@ public class ReuniaoDAO {
                     rs = st.executeQuery(sql);
 
                     while(rs.next()){
-                        
-                         Reuniao reuniao = new Reuniao();
-                            reuniao.setId(rs.getInt("id"));
-                            reuniao.setData(rs.getString("data"));
-                            reuniao.setTitulo(rs.getString("titulo"));
-                            reuniao.setDuracao(rs.getString("duracao"));
-                            reuniao.setCategoria(rs.getString("categoria"));
-                            reuniao.setLocalizacao(rs.getString("localizacao"));
-                            reuniao.setAta(rs.getString("ata"));
-                            reuniao.setCancelada(rs.getBoolean("cancelada"));
-                            lista.add(reuniao);
+                        Reuniao reuniao = new Reuniao();
+                        reuniao.setId(rs.getInt("id"));
+                        reuniao.setData(rs.getString("data"));
+                        reuniao.setTitulo(rs.getString("titulo"));
+                        reuniao.setHoraInicial(rs.getString("hora_inicial"));
+                        reuniao.setHoraFinal(rs.getString("hora_final"));   
+                        reuniao.setCategoria(rs.getString("categoria"));
+                        reuniao.setLocalizacao(rs.getString("localizacao"));                   
+                        reuniao.setCancelada(rs.getBoolean("cancelada"));
+                        reuniao.setDuracao(rs.getString("duracao")); 
+                        lista.add(reuniao);
                             
                          }
                     } catch(SQLException error){
@@ -139,31 +118,8 @@ public class ReuniaoDAO {
         return lista;
             
            
-      }
-      
-        /*  public Boolean existe(int valor){
-           String sql = "SELECT * FROM _reuniao WHERE id="+valor;
-         
-               try{
-                    st=conn.createStatement();
-                    rs = st.executeQuery(sql);
-                   Reuniao reuniao = new Reuniao();
-                    while(rs.next()){
-                        if(reuniao.setId(rs.getInt("id"))){
-                                         
-                       }
-                    
-                    if(reuniao.getId()){
-                        
-                    }
-                   
-                    } catch(SQLException error){
-                       throw new RuntimeException("Erro 5: " +error);
-                }       
-          return existe;
-      }
-      */
-      
+      }      
+            
       public ArrayList<Reuniao> listarTodos(){
             String sql = "SELECT * FROM _reuniao order by id desc";
                try{
@@ -172,22 +128,24 @@ public class ReuniaoDAO {
 
                     while(rs.next()){
                         Reuniao reuniao = new Reuniao();
-
                         reuniao.setId(rs.getInt("id"));
                         reuniao.setData(rs.getString("data"));
                         reuniao.setTitulo(rs.getString("titulo"));
-                        reuniao.setDuracao(rs.getString("duracao"));
+                        reuniao.setHoraInicial(rs.getString("hora_inicial"));
+                        reuniao.setHoraFinal(rs.getString("hora_final"));   
                         reuniao.setCategoria(rs.getString("categoria"));
-                        reuniao.setLocalizacao(rs.getString("localizacao"));
-                        reuniao.setAta(rs.getString("ata"));
+                        reuniao.setLocalizacao(rs.getString("localizacao"));                   
                         reuniao.setCancelada(rs.getBoolean("cancelada"));
+                        reuniao.setDuracao(rs.getString("duracao"));   
                         lista.add(reuniao);
                          }
                     } catch(SQLException error){
                        throw new RuntimeException("Erro 5: " +error);
                 }
         return lista;
+        
     }
-
+   
+            
    
 }

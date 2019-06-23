@@ -1,7 +1,7 @@
-<%@page import="br.com.app.model.Pauta"%>
-<%@page import="br.com.app.model.Reuniao"%>
-<%@page import="br.com.app.dao.PautaDAO"%>
-<%@page import="br.com.app.dao.ReuniaoDAO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="br.com.app.controller.*"%>
+<%@page import="br.com.app.model.*"%>
+<%@page import="br.com.app.dao.*"%>
 <%@page import="java.util.Date"%>
 <%@page import="java.text.DateFormat"%>
 <%               
@@ -24,26 +24,36 @@
              
              <div class="container-fluid">
                  
-                 <table class="table text-center col-auto table-responsive-md">
+                 <table class="table text-center col-auto table-responsive-md shadow-sm">
                     
-                         <thead class="table table-grey table-hover ">
+                         <thead class="table table-grey table-hover rounded-top  ">
                              <tr>
-                                 <th>1</th><th>2</th><th>3</th>
+                                 <th>Titulo da Reunião</th><th>Data da Reunião</th><th>Inicio/Fim da Reunião</th><th>Duração da Reuniao</th>
                              </tr>
                          </thead>
                          <tbody>
-                             <tr><td>testeste</td><td>testte</td><td>tesrte</td></tr>
-                             <tr><td>testeste</td><td>testte</td><td>tesrte</td></tr>  
-                          
-                         </tbody>
-                     </table>
+                            <%      ArrayList<Reuniao> lista = red.listarTodos();                           
+                                    CalculoHoras h = new CalculoHoras();
+                                    for(int num=0; num < lista.size(); num++){
+                                    
+                                         out.print("<tr><th>"+lista.get(num).getTitulo()+"</th><th>"+lista.get(num).getData()+"</th><th>"+lista.get(num).getHoraInicial()+" ~ "+lista.get(num).getHoraFinal()+"</th><th>"+lista.get(num).getDuracao()+"</th></tr>");
 
-                    
-                 
-                     
-                     
-                 </table>
-                 
+                                    }                                  
+                                 %>
+                                 </tbody>
+                                 <thead class="table table-sm table-info" >
+                                      <tr><th></th><th></th><th></th><th>Total de Horas</th></tr>
+                                       </thead> 
+                                       <tbody class=" border-bottom table-sm  ">
+                            <%    
+                                for(int num=0; num < lista.size(); num++){
+                                       h.Adicionar(lista.get(num).getDuracao());                                    
+                                   }         
+                        out.print("<tr><th></th><th></th><th></th><th>"+h.getHoras()+"</th></tr>");                                         
+                           %>                          
+                       </tbody>
+                     </table>                     
+                 </table>                 
              </div>
          
       

@@ -1,5 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="br.com.app.controller.ReuniaoErro"%>
+<%@page import="br.com.app.controller.*"%>
 <%@page import="br.com.app.model.Reuniao"%>
 <%@page import="br.com.app.dao.ReuniaoDAO"%>
 
@@ -13,18 +13,22 @@
         <%           
            
             try {
+                
                 Reuniao reu = new Reuniao();
                 ReuniaoErro rec = new ReuniaoErro();
                 ReuniaoDAO red = new ReuniaoDAO();
+                CalculoHoras h = new CalculoHoras();   
                 
                 if(!(request.getParameter("InputTitle").equals("") || request.getParameter("InputHourBegin").equals("")  || request.getParameter("InputHourEnd").equals("")  ||  request.getParameter("InputCategory").equals("") || request.getParameter("InputLocal").equals(""))){
-               
-                    reu.setTitulo(request.getParameter("InputTitle"));
+                          reu.setTitulo(request.getParameter("InputTitle"));
                     reu.setHoraInicial(request.getParameter("InputHourBegin"));
                     reu.setHoraFinal(request.getParameter("InputHourEnd"));
                     reu.setCategoria(request.getParameter("InputCategory"));
-                    reu.setLocalizacao(request.getParameter("InputLocal")); 
-                    reu.setData(request.getParameter("InputData"));
+                    reu.setLocalizacao(request.getParameter("InputLocal"));                  
+                    reu.setData(request.getParameter("InputData"));                    
+                    h.Adicionar(reu.getHoraFinal());
+                    h.Subtrair(reu.getHoraInicial());                    
+                    reu.setDuracao(h.getHoras());
                     reu.setCancelada(false);
                     reu.setProcurar("");
                     red.Inserir(reu);

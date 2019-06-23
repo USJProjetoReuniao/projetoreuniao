@@ -14,14 +14,26 @@ public class Reuniao {
     private int id;
     private String titulo;
     private String data;
+    private String horaInicial;  
+    private String horaFinal;
     private String duracao;
     private String categoria;
     private String localizacao;
     private String ata;
-    private Boolean cancelada;
-
-      public Reuniao() {
+    private Boolean cancelada;    
+    private static String procurar ="";    
+    
+    public Reuniao() {
+    }   
+    
+    
+    public static String getProcurar() {
+        return procurar;
     }
+
+    public static void setProcurar(String procurar) {
+        Reuniao.procurar = procurar;
+    }      
        
     
     public Boolean getCancelada() {
@@ -88,8 +100,21 @@ public class Reuniao {
         this.data = data;
     }
 
-  
-    
+   public String getHoraInicial() {
+        return horaInicial;
+    }
 
+    public void setHoraInicial(String horaInicial) {
+        this.horaInicial = horaInicial;
+    }
+
+    public String getHoraFinal() {
+        return horaFinal;
+    }
+
+    public void setHoraFinal(String horaFinal) {
+        this.horaFinal = horaFinal;
+    }
     
+ 
 }

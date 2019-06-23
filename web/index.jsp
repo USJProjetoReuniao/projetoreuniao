@@ -8,12 +8,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
          <link rel="stylesheet" href="./app/src/css/bootstrap.css" type="text/css"/>
          <link rel="stylesheet" href="./app/src/css/myStyle0001.css" type="text/css"/>
-         <link rel="stylesheet" href="./app/src/css/all.css" type="text/css"/>
+         <link rel="stylesheet" href="./app/src/css/all.css" type="text/css"/>        
          <script src="./app/src/js/all.js"></script>       
-         <script src="./app/src/js/loadpage.js"></script>
+         <script src="./app/src/js/loadpage.js"></script>      
          <script src="./app/src/js/jquery-3.4.1.min.js"></script>
+         <script src="./app/src/js/jquery.mask.min.js"></script>
          <script src="./app/src/js/bootstrap.js"></script>      
          <script src="./app/src/js/searchpage.js"></script>    
+    
         
          <style>
                 .bd-placeholder-img {
@@ -118,12 +120,9 @@
 	}, 2500);
         });
 
-</script>
-                
-      
-<script>
 function myEnableArea(a) {
   document.getElementById("comArea"+a).disabled = false;
   document.getElementById("btnEnviar"+a).disabled = false;
 }
+
 </script>
