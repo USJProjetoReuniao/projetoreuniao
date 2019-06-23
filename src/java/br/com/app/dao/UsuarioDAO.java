@@ -45,14 +45,15 @@ public class UsuarioDAO {
        
     }
     
-     public boolean Consultar(String nome, String senha) {
+     public boolean Consultar(Usuario usuario) {
          boolean check = false; 
            String sql ="SELECT * FROM _usuario WHERE nome = ? AND senha = ?";
          
          try{
                     stmt = conn.prepareStatement(sql);
-                    stmt.setString(1, nome);
-                    stmt.setString(2, senha);    
+                    stmt.setString(1, usuario.getNome());
+                    stmt.setString(2, usuario.getSenha()); 
+                  
                     rs = stmt.executeQuery();
                       
                    if(rs.next()){

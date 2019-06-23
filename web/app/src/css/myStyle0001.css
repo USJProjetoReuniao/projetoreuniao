@@ -50,7 +50,16 @@
     
 } 
 
-rounded-20{
+.rounded-20{
     border-radius: 20px;
     
+}
+.container-no-padding {
+    width: 100%;
+    
+}
+
+.table-white {
+    background-color: #fff;
+    color: black;
 }

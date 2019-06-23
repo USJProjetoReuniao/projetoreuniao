@@ -4,6 +4,7 @@
     Author     : Luandre Bernardi
 --%>
 
+<%@page import="br.com.app.model.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,6 +14,7 @@
     </head>
     <body>
         <%
+        Usuario.setNome("");;
         session.invalidate();
         response.sendRedirect("../../login.jsp");
         %>

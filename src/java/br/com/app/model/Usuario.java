@@ -12,7 +12,7 @@ package br.com.app.model;
 public class Usuario {
     
     private int id;
-    private String nome;
+    private static String nome ="";
     private String senha;
     private int nivel;
 
@@ -32,12 +32,12 @@ public class Usuario {
         this.id = id;
     }
 
-    public String getNome() {
+    public static String getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public static void setNome(String nome) {
+        Usuario.nome = nome;
     }
 
     public String getSenha() {

@@ -93,7 +93,7 @@
                               out.print("<div class='mt-2'>"
                                          + "<form method='POST'>"                                       
                                          + "<div class='float-left' style='width:100%;' >"                                            
-                                         + "<textarea rows='2' name='InputComentario' id='comArea"+(count)+"' class='text-justify form-control box ' placeholder='Comentario...' required  disabled>"+listaPauta.get(count).getComentario()+"</textarea>"
+                                         + "<textarea rows='2' name='InputComentario' id='comArea"+(count)+"' class='text-justify form-control box' placeholder='Comentario...' required disabled>"+listaPauta.get(count).getComentario()+"</textarea>"
                                          + "</div>"
                                          + "<div class=' mr-3 mt-2 float-right' style=''>"
                                          + "<input type='submit' value='Excluir' formaction='./app/controller/deletepauta.jsp?id="+listaPauta.get(count).getId()+"&id_r="+listaReuniao.get(num).getId()+"'  id='btnExcluir"+(count)+"' class='btn btn-sm mr-1 btn-danger btn-primary'> </input>" 
@@ -125,4 +125,10 @@
     
          </div>
           
+                                 
+                                 
+                                 
+                                 
+                                 
+                                 
    <% } %> 

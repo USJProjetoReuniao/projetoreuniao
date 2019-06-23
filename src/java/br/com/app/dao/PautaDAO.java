@@ -104,6 +104,8 @@ public class PautaDAO {
                     } catch(SQLException error){
                        throw new RuntimeException("Erro na Função Listar Todas: " +error);
                 }
-        return lista;
+        return lista;  
+     
     }
+       
 }

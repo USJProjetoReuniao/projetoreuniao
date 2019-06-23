@@ -59,8 +59,7 @@ var id = queryString("page");
 var a = queryString("id");
 
 
-function loadPage(){
-    
+function loadPage(){    
        
     if(id == 'painel'){
     var url = './app/view/painel.jsp';
@@ -70,6 +69,11 @@ function loadPage(){
       if(id == 'painel'){
     var url = './app/view/painel.jsp';
     document.getElementById("loadPageDocument").innerHTML = "<data data-include='"+url+"?search="+a+"'></data>";
+     }
+     
+        if(id == 'ata'){
+    var url = './app/view/ata.jsp';
+    document.getElementById("loadPageDocument").innerHTML = "<data data-include='"+url+"?id="+a+"'></data>";
      }
                  
     if(id == 'visualizar'){

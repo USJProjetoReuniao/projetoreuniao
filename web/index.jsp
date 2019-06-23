@@ -37,7 +37,7 @@
     </head>
     <body>
         <%
-        String usuario = (String) session.getAttribute("usuario");
+        String  usuario = (String) session.getAttribute("usuario");
               if(usuario == null){
                   response.sendRedirect("./login.jsp");   
               }else{
@@ -107,7 +107,7 @@
                    </div>
               </nav>
                 
-                <main id="loadPageDocument" role="main" class="col-md-auto ml-200px col-xl-10 px-4"> </main>
+                <main id="loadPageDocument" role="main" class="col-sm-auto ml-200px col-xl-10 px-4"> </main>
                 <script> loadPage(); </script>
      
           </body>
@@ -124,5 +124,8 @@ function myEnableArea(a) {
   document.getElementById("comArea"+a).disabled = false;
   document.getElementById("btnEnviar"+a).disabled = false;
 }
-
+function teste(){
+   
+    
+}
 </script>
