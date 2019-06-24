@@ -23,11 +23,10 @@ public class PautaDAO {
     private Connection conn;
     private PreparedStatement stmt;
     private Statement st;
-    private ResultSet rs;
+    private ResultSet rs;   
+    private ArrayList<Pauta> lista = new ArrayList<>();    
    
-    private ArrayList<Pauta> lista = new ArrayList<>();
-    
-     public PautaDAO(){
+    public PautaDAO(){
    
         conn = new ConnectionDB().getConexao();
     }
@@ -77,7 +76,7 @@ public class PautaDAO {
         try{
             stmt=conn.prepareStatement(sql);
             stmt.setString(1, pauta.getComentario()); 
-            stmt.setInt(2, pauta.getIdreuniao());    
+            stmt.setInt(2, pauta.getIdReuniao());    
             stmt.setInt(3, pauta.getId());  
             stmt.execute();
             stmt.close();

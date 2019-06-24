@@ -28,14 +28,14 @@
                     
                          <thead class="table table-grey table-hover rounded-top  ">
                              <tr>
-                                 <th>Titulo da Reunião</th><th>Data da Reunião</th><th>Inicio/Fim da Reunião</th><th>Duração da Reuniao</th>
+                                 <th>Titulo da Reunião</th><th>Data da Reunião</th><th>Inicio/Fim da Reunião</th><th>Duração da Reunião</th>
                              </tr>
                          </thead>
                          <tbody>
-                            <%      ArrayList<Reuniao> lista = red.listarTodos();                           
-                                    CalculoHoras h = new CalculoHoras();
-                                    for(int num=0; num < lista.size(); num++){
-                                    
+                            <%      
+                                ArrayList<Reuniao> lista = red.listarTodos();                           
+                                CalculoHoras h = new CalculoHoras();
+                                    for(int num=0; num < lista.size(); num++){                                    
                                          out.print("<tr><th>"+lista.get(num).getTitulo()+"</th><th>"+lista.get(num).getData()+"</th><th>"+lista.get(num).getHoraInicial()+" ~ "+lista.get(num).getHoraFinal()+"</th><th>"+lista.get(num).getDuracao()+"</th></tr>");
 
                                     }                                  

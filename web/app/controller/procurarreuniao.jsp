@@ -1,6 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="br.com.app.model.Reuniao" %>
-<%@page import="br.com.app.dao.ReuniaoDAO" %>
+<%@page import="br.com.app.model.*"%>
+<%@page import="br.com.app.controller.*"%>
+<%@page import="br.com.app.dao.*"%>
 
 <html>
        <head>

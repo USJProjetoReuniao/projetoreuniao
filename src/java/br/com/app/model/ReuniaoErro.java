@@ -1,4 +1,4 @@
-package br.com.app.controller;
+package br.com.app.model;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

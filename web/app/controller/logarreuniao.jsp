@@ -4,9 +4,9 @@
     Author     : Luandre Bernardi
 --%>
 
-<%@page import="br.com.app.model.Usuario"%>
-<%@page import="br.com.app.controller.UsuarioErro"%>
-<%@page import="br.com.app.dao.UsuarioDAO"%>
+<%@page import="br.com.app.model.*"%>
+<%@page import="br.com.app.controller.*"%>
+<%@page import="br.com.app.dao.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

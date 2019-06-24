@@ -23,14 +23,7 @@ public class Pauta {
     public void setComentario(String comentario) {
         this.comentario = comentario;
     }
-
-    public int getIdreuniao() {
-        return idreuniao;
-    }
-
-    public void setIdreuniao(int idreuniao) {
-        this.idreuniao = idreuniao;
-    }
+ 
 
     public String getHorario() {
         return horario;

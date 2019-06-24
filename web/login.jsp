@@ -1,6 +1,5 @@
-<%@page import="br.com.app.controller.UsuarioErro"%>
-<%@page import="br.com.app.model.Usuario"%>
-<%@page import="br.com.app.dao.UsuarioDAO"%>
+<%@page import="br.com.app.model.*"%>
+<%@page import="br.com.app.dao.*"%>
 <!DOCTYPE html>
 
 <html>

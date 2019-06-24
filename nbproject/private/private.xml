@@ -12,9 +12,23 @@
             <file>file:/home/luandre/NetBeansProjects/ProjetoReuniao/web/app/controller/insertreuniao.jsp</file>
         </group>
         <group name="WEB">
+            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/src/java/br/com/app/model/Pauta.java</file>
+            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/web/app/controller/insertreuniao.jsp</file>
+            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/src/java/br/com/app/dao/UsuarioDAO.java</file>
+            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/src/java/br/com/app/dao/ReuniaoDAO.java</file>
+            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/web/app/controller/logarreuniao.jsp</file>
+            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/src/java/br/com/app/dao/PautaDAO.java</file>
+            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/web/app/controller/ativarreuniao.jsp</file>
+            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/web/app/controller/procurarreuniao.jsp</file>
+            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/src/java/br/com/app/controller/CalculoHoras.java</file>
+            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/src/java/br/com/app/model/ReuniaoErro.java</file>
             <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/web/app/view/painel.jsp</file>
+            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/src/java/br/com/app/model/Reuniao.java</file>
+            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/web/app/src/js/loadpage.js</file>
+            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/web/app/view/relatorios.jsp</file>
+            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/src/java/br/com/app/model/Usuario.java</file>
             <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/web/index.jsp</file>
-            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/web/app/view/visualizar.jsp</file>
+            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/src/java/br/com/app/model/UsuarioErro.java</file>
         </group>
     </open-files>
 </project-private>
