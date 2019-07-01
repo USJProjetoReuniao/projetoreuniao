@@ -11,6 +11,12 @@
             <file>file:/home/luandre/NetBeansProjects/ProjetoReuniao/web/app/view/painel.jsp</file>
             <file>file:/home/luandre/NetBeansProjects/ProjetoReuniao/web/app/controller/insertreuniao.jsp</file>
         </group>
-        <group name="WEB"/>
+        <group name="WEB">
+            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/web/login.jsp</file>
+            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/web/app/view/painel.jsp</file>
+            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/web/app/view/ata.jsp</file>
+            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/web/app/view/relatorios.jsp</file>
+            <file>file:/C:/Users/Luandre%20Bernardi/Documents/NetBeansProjects/projetoreuniao/web/index.jsp</file>
+        </group>
     </open-files>
 </project-private>
